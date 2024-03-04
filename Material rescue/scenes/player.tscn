@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://olsj1fsqywpv"]
+
+[ext_resource type="Texture2D" uid="uid://v1us0v1knkke" path="res://Player/nave1.png" id="1_rjrqd"]
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_w8svi"]
+[ext_resource type="Texture2D" uid="uid://dufyqeyrgkl56" path="res://Player/nave2.png" id="2_51nny"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_025lb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rjrqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_51nny")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8w8x"]
+size = Vector2(88.5, 30.25)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(0, -3)
+script = ExtResource("1_w8svi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-8, 0)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_025lb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_g8w8x")
+
+[node name="gastac" type="Timer" parent="."]
+
+[node name="atira" type="AudioStreamPlayer2D" parent="gastac"]
+position = Vector2(0, -3)

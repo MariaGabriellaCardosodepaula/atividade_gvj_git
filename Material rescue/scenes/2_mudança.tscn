@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bmb5dv5dnnl4f"]
+
+[node name="2mudança" type="Node2D"]
+
+[node name="Timer" type="Timer" parent="."]
